@@ -37,7 +37,7 @@ circuit_string1 = @11.7810Y(0)|@3.1416Z(0)|@0.7854Y(0)|@0.5000X(4)|@12.0664Z(2)X
 circuit_string2 = @11.7810Y(0)|@3.1416Z(0)|@0.7854Y(0)|@0.5000X(4)|@12.0664Z(2)X(4)|@0.5000Z(2)|@2.0000X(0)|b@0.5000X(2)|b@12.0664Z(1)X(2)|
 ```
 Separators @ and | can be can be changed on initialization
-``python
+```python
 encoder = CircuitGenEncoder(angle_separator="@", gate_separator="|")
 ```
 
