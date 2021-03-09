@@ -17,7 +17,7 @@ class CircuitGenEncoder:
     def angle_separator(self):
         return self._symbols["angle_separator"]
 
-    def __init__(self, gate_separator=None, angle_separator=None):
+    def __init__(self, gate_separator=None, angle_separator=None, *args, **kwargs):
         if gate_separator is not None:
             self._symbols["gate_separator"] = gate_separator
         if angle_separator is not None:
@@ -189,7 +189,7 @@ class CircuitGenerator:
         return self._fix_angles
 
     def __init__(self, depth: int = None, connectivity: typing.Union[dict, str] = None, n_qubits: int = None,
-                 generators: list = None, fix_angles: dict = None):
+                 generators: list = None, fix_angles: dict = None, *args, **kwargs):
 
         if connectivity is None:
             connectivity = "all_to_all"
@@ -236,7 +236,7 @@ class CircuitGenerator:
     def make_connectivity_map_from_circuit(circuit: tq.QCircuit):
         raise NotImplementedError("still missing")
 
-    def __call__(self, past_moment=None):
+    def __call__(self, past_moment=None, *args, **kwargs):
         # past moment keeps track of not adding the same gate after another
         return self.make_random_constant_depth_circuit(depth=self.max_depth, past_moment=past_moment)
 
